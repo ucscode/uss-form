@@ -1,0 +1,25 @@
+{
+    "name": "ucscode/uss-form",
+    "description": "A PHP library designed for effortless HTML form creation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Uchenna Ajah",
+            "email": "uche23mail@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ucscode\\UssForm\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ucscode\\UssForm\\Tests\\": "tests/"
+        }
+    }
+}
