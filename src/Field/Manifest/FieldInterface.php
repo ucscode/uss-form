@@ -2,7 +2,7 @@
 
 namespace Ucscode\UssForm\Field\Manifest;
 
-use Ucscode\UssElement\UssElementNodeListInterface;
+use Ucscode\UssElement\Interface\UssElementNodeListInterface;
 use Ucscode\UssForm\Field\Foundation\ElementContext;
 use Ucscode\UssForm\Gadget\Gadget;
 use Ucscode\UssForm\Resource\Facade\Position;

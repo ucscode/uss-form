@@ -1,4 +1,4 @@
-# USS Form Documentation
+# USS Form
 
 Build Fully Customized HTML Form in 1 Minute
 
@@ -42,7 +42,7 @@ $form = new Form();
 
 $collection = $form->getCollection(Form::DEFAULT_COLLECTION);
 
-// Create any kind of Field you desire;
+// Create any desired Field;
 
 $regularField = new Field();
 $emailField = new Field(Field::NODE_INPUT, Field::TYPE_EMAIL);
@@ -65,7 +65,7 @@ echo $form->export();
 
 ## Resulting HTML Output
 
-The UssForm generates a structured HTML output based on the components and elements you define in your PHP code. Below is an example of what the resulting HTML might look like:
+The UssForm generates a structured HTML output based on the components and elements you define in your PHP code. Below is an **EXAMPLE** of what the resulting HTML might look like:
 
 ```html
 <form class='Form'> <!-- FORM -->
@@ -105,3 +105,5 @@ The UssForm generates a structured HTML output based on the components and eleme
 
 </form>
 ```
+
+This structure reflects the hierarchy and relationships between different components in the UssForm instance. However, you might have noticed that in the above example, we did not configure anything like `Label`, `Field Name` etc. More on that is made available in the [documentation](./docs/index.md) page.
