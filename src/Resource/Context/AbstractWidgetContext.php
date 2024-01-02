@@ -205,12 +205,14 @@ abstract class AbstractWidgetContext extends AbstractContext
         return !!$this->getOptionElement($key);
     }
 
-    public function getOptionElement(string $key): ?UssElement
+    public function getOptionElement(?string $key): ?UssElement
     {
-        foreach($this->element->getChildren() as $option) {
-            if($option->getAttribute("value") == $key) {
-                return $option;
-            };
+        if($key !== null) {
+            foreach($this->element->getChildren() as $option) {
+                if($option->getAttribute("value") == $key) {
+                    return $option;
+                };
+            }
         }
         return null;
     }
