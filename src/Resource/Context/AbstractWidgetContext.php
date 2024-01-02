@@ -236,9 +236,9 @@ abstract class AbstractWidgetContext extends AbstractContext
             $this->nodeType;
     }
 
-    protected function scalarize(mixed $value): string
+    protected function scalarize(mixed $value): ?string
     {
-        return is_scalar($value) || null ?
+        return is_scalar($value) || is_null($value) ?
             (is_bool($value) ? (int)$value : $value) :
             "[" . ucfirst(gettype($value)) . "]";
     }
