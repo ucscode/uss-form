@@ -63,7 +63,7 @@ abstract class AbstractWidgetContext extends AbstractContext
     {
         if($this->isButton()) {
             $this->nodeName === Field::NODE_BUTTON ?
-                $this->element->setContent($content) : 
+                $this->element->setContent($content) :
                 $this->setValue($content);
         }
         return $this;
@@ -238,7 +238,7 @@ abstract class AbstractWidgetContext extends AbstractContext
 
     protected function scalarize(mixed $value): string
     {
-        return is_scalar($value) ?
+        return is_scalar($value) || null ?
             (is_bool($value) ? (int)$value : $value) :
             "[" . ucfirst(gettype($value)) . "]";
     }
