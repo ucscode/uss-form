@@ -10,7 +10,7 @@ class ContainerContext extends AbstractGadgetContext
 {
     public function created(): void
     {
-        $class = 'widget-container input-single';
+        $class = 'widget-container input-single my-1';
         if($this->gadget->widget->isCheckable()) {
             $class .= ' form-check';
             if($this->gadget->widget->nodeType === Field::TYPE_SWITCH) {

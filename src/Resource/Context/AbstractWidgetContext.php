@@ -33,6 +33,7 @@ abstract class AbstractWidgetContext extends AbstractContext
                 }
         }
         $this->element->setAttribute('class', $elementClass ?? '');
+        $this->setRequired();
     }
 
     public function setDOMHidden(bool $value): self
@@ -59,7 +60,7 @@ abstract class AbstractWidgetContext extends AbstractContext
         return $this;
     }
 
-    public function setButtonContent(string $content, bool $ignoreException = false): self
+    public function setButtonContent(?string $content): self
     {
         if($this->isButton()) {
             $this->nodeName === Field::NODE_BUTTON ?
