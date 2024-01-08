@@ -13,7 +13,7 @@ class Attribute
         'target' => null,
         'accept-charset' => null,
         'enctype' => null,
-        'autoComplete' => null,
+        'autocomplete' => null,
         'method' => 'post',
     ];
 
@@ -23,14 +23,14 @@ class Attribute
 
     public function setName(?string $name): self
     {
-        $this->name = $name;
+        $this->attributes['name'] = $name;
         $this->bind('name', $name);
         return $this;
     }
 
     public function getName(): ?string
     {
-        return $this->name;
+        return $this->attributes['name'];
     }
 
     public function setAction(?string $action): self
