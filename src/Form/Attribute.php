@@ -7,15 +7,19 @@ use Exception;
 class Attribute
 {
     protected ?Form $form = null;
-    protected ?string $action = null;
-    protected ?string $target = null;
-    protected ?string $charset = null;
-    protected ?string $enctype = null;
-    protected ?string $autoComplete = null;
-    protected ?string $method = 'post';
+
+    protected array $attributes = [
+        'action' => null,
+        'target' => null,
+        'accept-charset' => null,
+        'enctype' => null,
+        'autoComplete' => null,
+        'method' => 'post',
+    ];
 
     public function __construct(protected ?string $name = null)
-    {}
+    {
+    }
 
     public function setName(?string $name): self
     {
@@ -31,74 +35,79 @@ class Attribute
 
     public function setAction(?string $action): self
     {
-        $this->action = $action;
+        $this->attributes['action'] = $action;
         $this->bind('action', $action);
         return $this;
     }
 
     public function getAction(): ?string
     {
-        return $this->action;
+        return $this->attributes['action'];
     }
 
     public function setMethod(string $method): self
     {
-        $this->method = $method;
+        $this->attributes['method'] = $method;
         $this->bind('method', $method);
         return $this;
     }
 
     public function getMethod(): string
     {
-        return $this->method;
+        return $this->attributes['method'];
     }
 
     public function setEnctype(?string $enctype): self
     {
-        $this->enctype = $enctype;
+        $this->attributes['enctype'] = $enctype;
         $this->bind('enctype', $enctype);
         return $this;
     }
 
     public function getEnctype(): ?string
     {
-        return $this->enctype;
+        return $this->attributes['enctype'];
     }
 
     public function setTarget(?string $target): self
     {
-        $this->target = $target;
+        $this->attributes['target'] = $target;
         $this->bind('target', $target);
         return $this;
     }
 
     public function getTarget(): ?string
     {
-        return $this->target;
+        return $this->attributes['target'];
     }
 
     public function setAutoComplete(?string $autoComplete): self
     {
-        $this->autoComplete = $autoComplete;
+        $this->attributes['autocomplete'] = $autoComplete;
         $this->bind('autocomplete', $autoComplete);
         return $this;
     }
 
     public function getAutoComplete(): ?string
     {
-        return $this->autoComplete;
+        return $this->attributes['autocomplete'];
     }
 
     public function setCharset(?string $charset): self
     {
-        $this->charset = $charset;
+        $this->attributes['accept-charset'] = $charset;
         $this->bind("accept-charset", $charset);
         return $this;
     }
 
     public function getCharset(): ?string
     {
-        return $this->charset;
+        return $this->attributes['accept-charset'];
+    }
+
+    public function fetchAll(): array
+    {
+        return $this->attributes;
     }
 
     public function defineFormInstanceOnce(Form $form): void
@@ -108,15 +117,15 @@ class Attribute
                 "Form Instance cannot be defined more than once for an Attribute instance"
             );
         }
-        
+
         $this->form = $form;
 
-        $this->setName($this->name);
-        $this->setMethod($this->method);
-        $this->setAction($this->action);
-        $this->setEnctype($this->enctype);
-        $this->setCharset($this->charset);
-        $this->setAutoComplete($this->autoComplete);
+        $this->setName($this->attributes['name']);
+        $this->setMethod($this->attributes['method']);
+        $this->setAction($this->attributes['action']);
+        $this->setEnctype($this->attributes['enctype']);
+        $this->setCharset($this->attributes['accept-charset']);
+        $this->setAutoComplete($this->attributes['autocomplete']);
     }
 
     protected function bind(string $name, ?string $value): void
