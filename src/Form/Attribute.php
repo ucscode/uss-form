@@ -9,6 +9,7 @@ class Attribute
     protected ?Form $form = null;
 
     protected array $attributes = [
+        'name' => null,
         'action' => null,
         'target' => null,
         'accept-charset' => null,
