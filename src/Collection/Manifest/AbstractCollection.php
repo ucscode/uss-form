@@ -18,11 +18,10 @@ abstract class AbstractCollection implements CollectionInterface
     }
 
     protected function swapField(
-        UssElement $element, 
-        ?UssElement $oldElement, 
+        UssElement $element,
+        ?UssElement $oldElement,
         ?UssElement $oldLineBreak
-    ): void
-    {
+    ): void {
         $collectionContainer = $this->elementContext->container->getElement();
         $collectionContainer->appendChild($element);
         if($oldElement) {
@@ -54,8 +53,9 @@ abstract class AbstractCollection implements CollectionInterface
                 $lineBreakElement = $context->lineBreak->getElement();
                 $embed ?
                     $collectionContainer->insertAfter($lineBreakElement, $context->frame->getElement()) :
-                    ($lineBreakElement->hasParentElement() ? 
-                        $lineBreakElement->getParentElement()->removeChild($lineBreakElement) : 
+                    (
+                        $lineBreakElement->hasParentElement() ?
+                        $lineBreakElement->getParentElement()->removeChild($lineBreakElement) :
                         null
                     );
             }

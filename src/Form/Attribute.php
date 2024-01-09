@@ -10,12 +10,12 @@ class Attribute
 
     protected array $attributes = [
         'name' => null,
+        'method' => 'post',
         'action' => null,
+        'enctype' => null,
         'target' => null,
         'accept-charset' => null,
-        'enctype' => null,
         'autocomplete' => null,
-        'method' => 'post',
     ];
 
     public function __construct(protected ?string $name = null)
@@ -106,9 +106,11 @@ class Attribute
         return $this->attributes['accept-charset'];
     }
 
-    public function fetchAll(): array
+    public function fetchAll(bool $onlyConcluded = false): array
     {
-        return $this->attributes;
+        return !$onlyConcluded ?
+            $this->attributes :
+            array_filter($this->attributes, fn ($value) => !empty($value));
     }
 
     public function defineFormInstanceOnce(Form $form): void
