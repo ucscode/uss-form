@@ -25,7 +25,7 @@ class Form extends AbstractForm
     {
         return $this->collections[$name] ?? null;
     }
-    
+
     public function removeCollection(string|Collection $context): ?Collection
     {
         if($this->hasCollection($context)) {
@@ -68,10 +68,29 @@ class Form extends AbstractForm
         return $this->attribute;
     }
 
+    public function populate(array $data): void
+    {
+        $linearArray = $this->dataToLinearArray($data);
+        foreach($this->collections as $collection) {
+            foreach($collection->getFields() as $field) {
+                $widget = $field->getElementContext()->widget;
+                $name = $widget->getAttribute('name');
+                $value = $linearArray[$name] ?? null;
+                if($value !== null) {
+                    if($widget->isCheckable()) {
+                        $widget->setChecked((bool)$value);
+                        continue;
+                    }
+                    $widget->setValue(is_string($value) ? $value : '');
+                };
+            };
+        };
+    }
+
     public function export(): string
     {
         array_walk(
-            $this->collections, 
+            $this->collections,
             fn (Collection $collection) => $collection->getElementContext()->export()
         );
         return $this->element->getHTML(true);
@@ -83,7 +102,7 @@ class Form extends AbstractForm
         $targetCollection = $targetCollection instanceof Collection ? $targetCollection : $this->getCollection($targetCollection);
 
         if($this->hasCollection($collection) && $this->hasCollection($targetCollection)) {
-            
+
             $collectionElement = $collection->getElementContext()->fieldset->getElement();
             $targetElement = $targetCollection->getElementContext()->fieldset->getElement();
 

@@ -39,4 +39,18 @@ abstract class AbstractForm implements FormInterface
             $fieldsetContext->addClass((new FieldUtils())->simplifyContent($name, '-') . "-collection");
         }
     }
+
+    protected function dataToLinearArray(array $data, string $prefix = ''): array
+    {
+        $result = array();
+        foreach($data as $key => $value) {
+            $offset = empty($prefix) ? $key : $prefix . "[$key]";
+            if(!is_array($value)) {
+                $result[$offset] = $value;
+                continue;
+            }
+            $result += $this->dataToLinearArray($value, $offset);
+        };
+        return $result;
+    }
 }

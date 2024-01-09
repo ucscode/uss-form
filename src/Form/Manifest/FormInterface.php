@@ -19,4 +19,5 @@ interface FormInterface
     public function getAttribute(): Attribute;
     public function export(): string;
     public function setCollectionPosition(string|Collection $collection, Position $position, string|Collection $targetCollection): bool;
+    public function populate(array $data): void;
 }
