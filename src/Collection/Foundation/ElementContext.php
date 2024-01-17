@@ -84,7 +84,7 @@ class ElementContext extends AbstractElementContext
         );
 
         array_walk($contexts, function(AbstractContext $context) {
-            !$context->hasValue() && !$context->isFixed() ? $context->addClass("d-none") : null;
+            !$context->hasValue() && !$context->isFixed() ? $context->setDOMHidden(true) : null;
         });
 
         return $this->fieldset->getElement()->getHTML(true);
