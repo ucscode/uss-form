@@ -5,8 +5,9 @@ namespace Ucscode\UssForm\Resource\Context;
 use Ucscode\UssForm\Resource\Service\FieldUtils;
 use Ucscode\UssForm\Field\Field;
 use Ucscode\UssElement\UssElement;
+use Ucscode\UssForm\Resource\Interface\WidgetContextInterface;
 
-abstract class AbstractWidgetContext extends AbstractContext
+abstract class AbstractWidgetContext extends AbstractContext implements WidgetContextInterface
 {
     public readonly string $nodeName;
     public readonly ?string $nodeType;

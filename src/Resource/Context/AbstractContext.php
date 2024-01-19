@@ -3,8 +3,9 @@
 namespace Ucscode\UssForm\Resource\Context;
 
 use Ucscode\UssElement\UssElement;
+use Ucscode\UssForm\Resource\Interface\ContextInterface;
 
-abstract class AbstractContext
+abstract class AbstractContext implements ContextInterface
 {
     abstract protected function created();
 

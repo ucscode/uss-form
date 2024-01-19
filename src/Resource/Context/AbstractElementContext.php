@@ -4,8 +4,9 @@ namespace Ucscode\UssForm\Resource\Context;
 
 use ReflectionClass;
 use ReflectionProperty;
+use Ucscode\UssForm\Resource\Interface\ElementContextInterface;
 
-abstract class AbstractElementContext
+abstract class AbstractElementContext implements ElementContextInterface
 {
     abstract public function export(): string;
     abstract public function visualizeContextElements(): void;
