@@ -8,7 +8,7 @@ use Ucscode\UssForm\Gadget\Foundation\AbstractGadgetContext;
 
 class ContainerContext extends AbstractGadgetContext
 {
-    public function created(): void
+    protected function created(): void
     {
         $class = 'widget-container input-single my-1';
         if($this->gadget->widget->isCheckable()) {
@@ -18,6 +18,8 @@ class ContainerContext extends AbstractGadgetContext
             }
         }
         $this->addClass($class);
+        $this->element->setAttribute('data-foundation', 'gadget');
+        $this->element->setAttribute('data-el-context', 'container');
     }
 
     public function setValue(string|UssElement|null $value): self

@@ -6,8 +6,9 @@ use Ucscode\UssForm\Field\Foundation\AbstractFieldContext;
 
 class InfoContext extends AbstractFieldContext
 {
-    public function created(): void
+    protected function created(): void
     {
         $this->addClass('field-info small');
+        $this->element->setAttribute('data-el-context', 'info');
     }
 }

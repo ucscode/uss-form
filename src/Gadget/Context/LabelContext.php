@@ -6,10 +6,11 @@ use Ucscode\UssForm\Gadget\Foundation\AbstractGadgetContext;
 
 class LabelContext extends AbstractGadgetContext
 {
-    public function created(): void
+    protected function created(): void
     {
         $this->addClass(
             $this->gadget->widget->isCheckable() ? 'form-check-label' : 'form-label'
         );
+        $this->element->setAttribute('data-el-context', 'label');
     }
 }

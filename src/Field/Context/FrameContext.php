@@ -7,7 +7,7 @@ use Ucscode\UssForm\Field\Foundation\AbstractFieldContext;
 
 class FrameContext extends AbstractFieldContext
 {
-    public function created(): void
+    protected function created(): void
     {
         $this->addClass('frame col-12 my-1');
         $this->element->setAttribute('data-foundation', 'field');

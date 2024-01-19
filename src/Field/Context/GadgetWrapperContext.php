@@ -6,8 +6,9 @@ use Ucscode\UssForm\Field\Foundation\AbstractFieldContext;
 
 class GadgetWrapperContext extends AbstractFieldContext
 {
-    public function created(): void
+    protected function created(): void
     {
         $this->addClass("gadget-wrapper");
+        $this->element->setAttribute('data-el-context', 'gadgetWrapper');
     }
 }
