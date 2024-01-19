@@ -11,6 +11,6 @@ class LabelContext extends AbstractGadgetContext
         $this->addClass(
             $this->gadget->widget->isCheckable() ? 'form-check-label' : 'form-label'
         );
-        $this->element->setAttribute('data-el-context', 'label');
+        $this->element->setAttribute('data-el-context', 'gadget.label');
     }
 }

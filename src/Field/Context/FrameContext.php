@@ -10,8 +10,7 @@ class FrameContext extends AbstractFieldContext
     protected function created(): void
     {
         $this->addClass('frame col-12 my-1');
-        $this->element->setAttribute('data-foundation', 'field');
-        $this->element->setAttribute('data-el-context', 'frame');
+        $this->element->setAttribute('data-el-context', 'field.frame');
     }
 
     public function setValue(string|UssElement|null $value): self

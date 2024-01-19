@@ -10,7 +10,7 @@ class LineBreakContext extends AbstractFieldContext
     protected function created(): void
     {
         $this->addClass("field-break col-12");
-        $this->element->setAttribute('data-el-context', 'lineBreak');
+        $this->element->setAttribute('data-el-context', 'field.lineBreak');
     }
 
     public function setValue(string|UssElement|null $value): self

@@ -9,7 +9,7 @@ class SuffixContext extends PrefixContext
     protected function created(): void
     {
         parent::created();
-        $this->element->setAttribute('data-el-context', 'suffix');
+        $this->element->setAttribute('data-el-context', 'gadget.suffix');
         $this->store->{$this->name} = false;
     }
 

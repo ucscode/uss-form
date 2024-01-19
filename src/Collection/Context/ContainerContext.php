@@ -10,7 +10,7 @@ class ContainerContext extends AbstractCollectionContext
     protected function created(): void
     {
         $this->element->setAttribute('class', 'row collection-container');
-        $this->element->setAttribute('data-el-context', 'container');
+        $this->element->setAttribute('data-el-context', 'collection.container');
     }
 
     public function setValue(string|UssElement|null $value): self

@@ -9,6 +9,6 @@ class InfoContext extends AbstractFieldContext
     protected function created(): void
     {
         $this->addClass('field-info small');
-        $this->element->setAttribute('data-el-context', 'info');
+        $this->element->setAttribute('data-el-context', 'field.info');
     }
 }

@@ -10,7 +10,7 @@ class WrapperContext extends AbstractFieldContext
     protected function created(): void
     {
         $this->addClass('field-wrapper');
-        $this->element->setAttribute('data-el-context', 'wrapper');
+        $this->element->setAttribute('data-el-context', 'field.wrapper');
     }
 
     public function setValue(string|UssElement|null $value): self

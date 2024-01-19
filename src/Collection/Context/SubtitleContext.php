@@ -9,6 +9,6 @@ class SubtitleContext extends AbstractCollectionContext
     protected function created(): void
     {
         $this->element->setAttribute('class', 'collection-subtitle small');
-        $this->element->setAttribute('data-el-context', 'subtitle');
+        $this->element->setAttribute('data-el-context', 'collection.subtitle');
     }
 }

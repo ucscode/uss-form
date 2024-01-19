@@ -33,6 +33,7 @@ abstract class AbstractWidgetContext extends AbstractContext
                 }
         }
         $this->element->setAttribute('class', $elementClass ?? '');
+        $this->element->setAttribute('data-el-context', 'gadget.widget');
         $this->setRequired();
     }
 

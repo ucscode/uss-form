@@ -9,6 +9,6 @@ class InstructionContext extends AbstractCollectionContext
     protected function created(): void
     {
         $this->element->setAttribute('class', 'collection-instruction alert alert-info');
-        $this->element->setAttribute('data-el-context', 'instruction');
+        $this->element->setAttribute('data-el-context', 'collection.instruction');
     }
 }

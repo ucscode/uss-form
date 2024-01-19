@@ -14,7 +14,7 @@ class PrefixContext extends AbstractGadgetContext
     {
         $this->addClass('input-affix');
         $this->store->{$this->name} = false;
-        $this->element->setAttribute('data-el-context', 'prefix');
+        $this->element->setAttribute('data-el-context', 'gadget.prefix');
     }
 
     public function setValue(string|UssElement|null $value): self

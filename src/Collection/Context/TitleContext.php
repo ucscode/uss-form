@@ -9,6 +9,6 @@ class TitleContext extends AbstractCollectionContext
     protected function created(): void
     {
         $this->element->setAttribute('class', 'collection-title');
-        $this->element->setAttribute('data-el-context', 'title');
+        $this->element->setAttribute('data-el-context', 'collection.title');
     }
 }
