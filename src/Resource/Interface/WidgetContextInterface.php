@@ -4,7 +4,7 @@ namespace Ucscode\UssForm\Resource\Interface;
 
 use Ucscode\UssElement\UssElement;
 
-interface WidgetContextInterface
+interface WidgetContextInterface extends ContextInterface
 {
     public function setDOMHidden(bool $value): self;
     public function setValue(string|UssElement|null $value): self;
