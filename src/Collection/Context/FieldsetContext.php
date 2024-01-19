@@ -10,6 +10,8 @@ class FieldsetContext extends AbstractCollectionContext
     protected function created(): void
     {
         $this->element->setAttribute('class', 'collection-wrapper col-12');
+        $this->element->setAttribute('data-foundation', 'collection');
+        $this->element->setAttribute('data-el-context', 'fieldset');
     }
 
     public function setValue(string|UssElement|null $value): self
