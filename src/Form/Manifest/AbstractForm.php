@@ -16,6 +16,7 @@ abstract class AbstractForm implements FormInterface
     public function __construct(protected Attribute $attribute = new Attribute())
     {
         $this->element = new UssElement(UssElement::NODE_FORM);
+        $this->element->setAttribute('class', 'form row');
         $attribute->defineFormInstanceOnce($this);
         $this->addCollection(self::DEFAULT_COLLECTION, new Collection());
     }
