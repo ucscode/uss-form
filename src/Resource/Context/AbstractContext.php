@@ -59,7 +59,7 @@ abstract class AbstractContext implements ContextInterface
     public function setValue(string|UssElement|null $value): self
     {
         $this->value = $value;
-        $this->element->freeElement();
+        $this->element->resetContext();
         $value instanceof UssElement ? $this->element->appendChild($value) : $this->element->setContent($value);
         return $this;
     }
