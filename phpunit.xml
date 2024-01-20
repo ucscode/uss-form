@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    cacheResult="false"
+    colors="true"
+>
+    <testsuites>
+        <testsuite name="UssForm Test Suite">
+            <directory phpVersion="8.1">tests</directory>
+        </testsuite>
+    </testsuites>
+    <php></php>
+</phpunit>
