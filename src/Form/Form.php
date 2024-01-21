@@ -62,12 +62,7 @@ class Form extends AbstractForm
     {
         return $this->element;
     }
-
-    public function getAttribute(): Attribute
-    {
-        return $this->attribute;
-    }
-
+    
     public function populate(array $data): void
     {
         $linearArray = $this->dataToLinearArray($data);

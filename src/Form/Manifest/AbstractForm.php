@@ -13,7 +13,7 @@ abstract class AbstractForm implements FormInterface
     protected readonly UssElement $element;
     protected array $collections = [];
 
-    public function __construct(protected Attribute $attribute = new Attribute())
+    public function __construct(public readonly Attribute $attribute = new Attribute())
     {
         $this->element = new UssElement(UssElement::NODE_FORM);
         $this->element->setAttribute('class', 'form row');
