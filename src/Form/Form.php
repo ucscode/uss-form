@@ -70,8 +70,8 @@ class Form extends AbstractForm
             foreach($collection->getFields() as $field) {
                 $widget = $field->getElementContext()->widget;
                 $name = $widget->getAttribute('name');
-                $value = $linearArray[$name] ?? null;
-                if($value !== null) {
+                if(array_key_exists($name, $linearArray)) {
+                    $value = $linearArray[$name] ?? null;
                     if($widget->isCheckable()) {
                         $widget->setChecked((bool)$value);
                         continue;
