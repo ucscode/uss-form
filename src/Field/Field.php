@@ -6,7 +6,7 @@ use Ucscode\UssForm\Field\Manifest\AbstractField;
 use Ucscode\UssForm\Field\Foundation\ElementContext;
 use Ucscode\UssForm\Gadget\Gadget;
 use Ucscode\UssForm\Resource\Facade\Position;
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 
 class Field extends AbstractField
 {

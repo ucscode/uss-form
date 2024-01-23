@@ -1,6 +1,6 @@
 <?php
 
-namespace Ucscode\UssForm\Resource\Service;
+namespace Ucscode\UssForm\Resource\Service\Utils;
 
 use ReflectionClass;
 use Ucscode\UssElement\UssElement;

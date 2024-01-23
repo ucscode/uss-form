@@ -5,7 +5,7 @@ namespace Ucscode\UssForm\Form\Manifest;
 use Ucscode\UssElement\UssElement;
 use Ucscode\UssForm\Collection\Collection;
 use Ucscode\UssForm\Form\Attribute;
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 
 abstract class AbstractForm implements FormInterface
 {

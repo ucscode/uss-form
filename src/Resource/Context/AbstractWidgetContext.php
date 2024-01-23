@@ -2,7 +2,7 @@
 
 namespace Ucscode\UssForm\Resource\Context;
 
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 use Ucscode\UssForm\Field\Field;
 use Ucscode\UssElement\UssElement;
 use Ucscode\UssForm\Resource\Interface\WidgetContextInterface;

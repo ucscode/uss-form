@@ -4,8 +4,9 @@ namespace Ucscode\UssForm\Form\Manifest;
 
 use Ucscode\UssElement\UssElement;
 use Ucscode\UssForm\Collection\Collection;
-use Ucscode\UssForm\Form\Attribute;
+use Ucscode\UssForm\Field\Field;
 use Ucscode\UssForm\Resource\Facade\Position;
+use Ucscode\UssForm\Resource\Service\Pedigree\FieldPedigree;
 
 interface FormInterface
 {
@@ -19,4 +20,5 @@ interface FormInterface
     public function export(): string;
     public function setCollectionPosition(string|Collection $collection, Position $position, string|Collection $targetCollection): bool;
     public function populate(array $data): void;
+    public function getFieldPedigree(string|Field $context): ?FieldPedigree;
 }

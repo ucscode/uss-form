@@ -3,7 +3,7 @@
 namespace Ucscode\UssForm\Gadget\Context;
 
 use Ucscode\UssForm\Gadget\Foundation\AbstractGadgetContext;
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 use Ucscode\UssElement\UssElement;
 
 class PrefixContext extends AbstractGadgetContext

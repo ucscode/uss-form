@@ -5,7 +5,7 @@ namespace Ucscode\UssForm\Field\Manifest;
 use Ucscode\UssElement\UssElement;
 use Ucscode\UssForm\Field\Field;
 use Ucscode\UssForm\Field\Foundation\ElementContext;
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 
 abstract class AbstractField implements FieldInterface
 {

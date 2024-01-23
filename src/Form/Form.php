@@ -4,8 +4,10 @@ namespace Ucscode\UssForm\Form;
 
 use Ucscode\UssElement\UssElement;
 use Ucscode\UssForm\Collection\Collection;
+use Ucscode\UssForm\Field\Field;
 use Ucscode\UssForm\Form\Manifest\AbstractForm;
 use Ucscode\UssForm\Resource\Facade\Position;
+use Ucscode\UssForm\Resource\Service\Pedigree\FieldPedigree;
 
 class Form extends AbstractForm
 {
@@ -109,5 +111,28 @@ class Form extends AbstractForm
         }
 
         return false;
+    }
+
+    public function getFieldPedigree(string|Field $context): ?FieldPedigree
+    {
+        foreach($this->getCollections() as $collectionName => $collection) {
+            if($collection->hasField($context)) {
+                $field = $context instanceof Field ? $context : $collection->getField($context);
+                if($field) {
+                    $fieldName = $collection->getFieldName($field);
+                    $gadget = $field->getElementContext()->gadget;
+                    return new FieldPedigree(
+                        $gadget->widget,
+                        $gadget,
+                        $fieldName,
+                        $field,
+                        $collectionName,
+                        $collection,
+                        $this
+                    );
+                };
+            }
+        };
+        return null;
     }
 }

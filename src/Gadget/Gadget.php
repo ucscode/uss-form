@@ -11,7 +11,7 @@ use Ucscode\UssForm\Gadget\Context\PrefixContext;
 use Ucscode\UssForm\Gadget\Context\SuffixContext;
 use Ucscode\UssForm\Gadget\Context\WidgetContext;
 use Ucscode\UssForm\Gadget\Manifest\AbstractGadget;
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 
 // In this case, Gadget is the ElementContext
 

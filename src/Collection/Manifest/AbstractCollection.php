@@ -5,7 +5,7 @@ namespace Ucscode\UssForm\Collection\Manifest;
 use Ucscode\UssElement\UssElement;
 use Ucscode\UssForm\Collection\Foundation\ElementContext;
 use Ucscode\UssForm\Field\Field;
-use Ucscode\UssForm\Resource\Service\FieldUtils;
+use Ucscode\UssForm\Resource\Service\Utils\FieldUtils;
 
 abstract class AbstractCollection implements CollectionInterface
 {
