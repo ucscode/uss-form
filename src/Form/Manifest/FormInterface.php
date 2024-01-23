@@ -19,6 +19,6 @@ interface FormInterface
     public function getElement(): UssElement;
     public function export(): string;
     public function setCollectionPosition(string|Collection $collection, Position $position, string|Collection $targetCollection): bool;
-    public function populate(array $data): void;
+    public function populate(array $data): self;
     public function getFieldPedigree(string|Field $context): ?FieldPedigree;
 }

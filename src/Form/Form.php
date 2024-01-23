@@ -65,7 +65,7 @@ class Form extends AbstractForm
         return $this->element;
     }
     
-    public function populate(array $data): void
+    public function populate(array $data): self
     {
         $linearArray = $this->dataToLinearArray($data);
         foreach($this->collections as $collection) {
@@ -82,6 +82,7 @@ class Form extends AbstractForm
                 };
             };
         };
+        return $this;
     }
 
     public function export(): string
