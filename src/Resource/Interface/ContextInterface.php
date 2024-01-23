@@ -6,9 +6,9 @@ use Ucscode\UssElement\UssElement;
 
 interface ContextInterface
 {
-    public function setAttribute(string $name, ?string $value = null, bool $append): self;
+    public function setAttribute(string $name, ?string $value, bool $append): self;
     public function getAttribute(string $name): ?string;
-    public function removeAttribute(string $name, ?string $value = null): self;
+    public function removeAttribute(string $name, ?string $value): self;
     public function hasAttribute(string $name): bool;
     public function setDOMHidden(bool $value): self;
     public function isDOMHidden(): bool;
