@@ -48,7 +48,7 @@ class Collection extends AbstractCollection
     public function hasField(string|Field $context): bool
     {
         return $context instanceof Field ?
-            $this->getFieldName($context) !== false :
+            in_array($context, $this->fields, true) !== false :
             !!$this->getField($context);
     }
 
@@ -77,7 +77,7 @@ class Collection extends AbstractCollection
 
     public function getFieldName(Field $field): ?string
     {
-        $name = array_search($field, $this->getFields(), true);
+        $name = array_search($field, $this->fields, true);
         return $name !== false ? $name : null;
     }
 
