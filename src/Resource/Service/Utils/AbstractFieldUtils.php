@@ -9,8 +9,9 @@ use Ucscode\UssForm\Field\Manifest\FieldTypesInterface;
 
 abstract class AbstractFieldUtils
 {
-    public function regulateElementPrototype(string $nodeName, ?string $nodeType): array
+    public function regulateElementPrototype(?string $nodeName, ?string $nodeType): array
     {
+        $nodeName ??= Field::NODE_INPUT;
         $nodeName = in_array(
             $nodeName,
             [
